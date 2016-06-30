@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SistemaRotativoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Rotativo">
+          <Key>
+            <PropertyRef Name="codRot" />
+          </Key>
+          <Property Name="codRot" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="plaVei" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="datEnt" Type="datetime" Nullable="false" />
+          <Property Name="datSai" Type="datetime" />
+          <Property Name="qtdMin" Type="int" Nullable="false" />
+          <Property Name="valTotal" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SistemaRotativoModelStoreContainer">
+          <EntitySet Name="Rotativo" EntityType="Self.Rotativo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SistemaRotativoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Rotativo">
+          <Key>
+            <PropertyRef Name="codRot" />
+          </Key>
+          <Property Name="codRot" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="plaVei" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datEnt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="datSai" Type="DateTime" Precision="3" />
+          <Property Name="qtdMin" Type="Int32" Nullable="false" />
+          <Property Name="valTotal" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SistemaRotativoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Rotativo" EntityType="Self.Rotativo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SistemaRotativoModelStoreContainer" CdmEntityContainer="SistemaRotativoEntities">
+          <EntitySetMapping Name="Rotativo">
+            <EntityTypeMapping TypeName="SistemaRotativoModel.Rotativo">
+              <MappingFragment StoreEntitySet="Rotativo">
+                <ScalarProperty Name="codRot" ColumnName="codRot" />
+                <ScalarProperty Name="plaVei" ColumnName="plaVei" />
+                <ScalarProperty Name="datEnt" ColumnName="datEnt" />
+                <ScalarProperty Name="datSai" ColumnName="datSai" />
+                <ScalarProperty Name="qtdMin" ColumnName="qtdMin" />
+                <ScalarProperty Name="valTotal" ColumnName="valTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
